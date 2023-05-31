@@ -2,6 +2,9 @@
 //==============================================
 
 object RexpM {
+  // some convenience for typing regular expressions
+  import scala.language.implicitConversions    
+  import scala.language.reflectiveCalls 
 
   // Definition of regular expressions
   abstract class Rexp
@@ -16,16 +19,12 @@ object RexpM {
   def ALT(r1: Rexp, r2: Rexp) = ALTs(List(r1, r2))
   def SEQ(r1: Rexp, r2: Rexp) = SEQs(List(r1, r2))
 
-  // some convenience for typing regular expressions
-  import scala.language.implicitConversions    
-  import scala.language.reflectiveCalls 
-
   def charlist2rexp(s: List[Char]): Rexp = s match {
     case Nil => ONE
     case c::Nil => CHAR(c)
     case c::s => SEQ(CHAR(c), charlist2rexp(s))
   }
-  
+
   implicit def string2rexp(s: String): Rexp = charlist2rexp(s.toList)
 
   implicit def RexpOps (r: Rexp) = new {
