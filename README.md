@@ -22,7 +22,7 @@ size(simp(der('a', der('a', der('a', EVIL))))) // => 7
 ```
 
 ---
-Python needs around 30 seconds for matching 28 a's with EVIL. Java 9 and later increase this to an "astonishing" 40000 a's in 30 seconds. Lets see how long it really takes to match strings with 5 Million a's...it should be in the range of a few of seconds.
+Python needs around 30 seconds for matching 28 a's with EVIL. Java 9 and later increase this to an "astonishing" 40000 a's in 30 seconds. Matching strings with 5 Million a's using this matcher should be in the range of a few of seconds.
 
 We can use the following function below to help with the time
 ```scala
