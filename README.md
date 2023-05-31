@@ -38,7 +38,7 @@ for (i <- 0 to 5000000 by 500000) {
 }
 ```
 
-This matcher is very powerful, here is another "power" test
+Here is another "power" test
 ```scala
 /*
   the Iterator produces the rexp
